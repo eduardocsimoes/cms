@@ -1,0 +1,40 @@
+body{
+	background-color: #FFF;
+	border: 0;
+}
+.topo{
+	height: 80px;
+	background-color: #DDD;
+}
+.menu{
+	height: 40px;
+	background-color: #CCC;
+}
+.menu ul{
+	margin: 0px;
+	padding:  0px;
+	list-style: none;
+}
+.menu li{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #000;
+}
+.menu li a{
+	text-decoration: none;
+}
+.menu li:hover{
+	background-color: #000;
+	color: #FFF;
+}
+.container{
+	min-height: 200px;
+	background-color: #FFF;
+}
+.rodape{
+	height: 80px;
+	background-color: #CCC;
+}

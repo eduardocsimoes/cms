@@ -1,0 +1,38 @@
+<?php 
+	class controller{
+
+		private $config;
+
+		public function __construct(){
+
+			$cfg = new Config();
+			$this->config = $cfg->getConfig();
+		}
+
+		public function loadView($viewName, $viewData = array()){
+
+			extract($viewData);
+			require 'views/'.$viewName.'.php';
+		}
+
+		public function loadTemplate($viewName, $viewData = array()){
+
+			require 'views/templates/'.$this->config['site_template'].'.php';
+		}
+
+		public function loadViewInTemplate($viewName, $viewData = array()){
+			
+			extract($viewData);
+			require 'views/'.$viewName.'.php';
+		}
+
+		public function loadMenu(){
+			
+			$menu = array();
+			$m = new Menu();
+			$menu['menu'] = $m->getMenu();
+
+			$this->loadView("menu", $menu);
+		}
+	}
+ ?>
