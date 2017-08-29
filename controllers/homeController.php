@@ -3,7 +3,13 @@
 
 		public function index(){
 
-			$dados = array();
+			$dados = array(
+				'depoimentos' => array()
+			);
+
+			$depo = new Depoimentos();
+
+			$dados['depoimentos'] = $depo->getDepoimentos(2);
 
 			$this->loadTemplate('home', $dados);
 		}

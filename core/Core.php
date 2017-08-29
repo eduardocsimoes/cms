@@ -9,7 +9,7 @@
 			}
 
 			$params = array();
-			if(!empty($_GET['url']) && $url != '/'){
+			if(!empty($_GET['url'])){
 				$url = explode('/', $url);
 				array_shift($url);
 
@@ -33,12 +33,21 @@
 
 			require_once 'core/controller.php';
 
+			if(file_exists("controllers/".$currentController.".php")){
+				$c = new $currentController();
+			}else{
+				$c = new paginaController();
+				$currentAction = 'index';
+				$nomeDaPagina = explode("Controller", $currentController);
+				$nomeDaPagina = $nomeDaPagina[0];
+				$params = array($nomeDaPagina);
+			}
+
 			if(!file_exists('controllers/'.$currentController.'.php') || !method_exists($currentController, $currentAction)) {
 				$currentController = 'notfoundController';
 				$currentAction = 'index';
-			}				
+			}			
 			
-			$c = new $currentController();
 			call_user_func_array(array($c, $currentAction), $params);
 		}
 	}

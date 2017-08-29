@@ -1,0 +1,11 @@
+<h1>Configurações</h1>
+
+<form method="POST">
+	Titulo do Site:<br>
+	<input type="text" name="site_title" value="<?php echo $this->config['site_title'];?>"><br><br>
+
+	Texto de Boas Vindas do Site:<br>
+	<input type="text" name="home_welcome" value="<?php echo $this->config['home_welcome'];?>"><br><br>
+
+	<input type="submit" value="Salvar">
+</form>

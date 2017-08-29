@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title><?php echo $this->config['site_title']; ?></title>
+		<title>Exemplo</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/exemplo.css">
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
 	</head>
